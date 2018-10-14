@@ -20,5 +20,9 @@ $ pip install jupyter
 
 $ pip install pandas
 
+$ pip install sklearn
+
+$ pip install seaborn 
+
 $ pip freeze > requirements.txt
 ```
