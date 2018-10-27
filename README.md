@@ -24,5 +24,9 @@ $ pip install sklearn
 
 $ pip install seaborn 
 
+$ pip install keras==2.0
+
+$ pip install tensorflow==1.6.0
+
 $ pip freeze > requirements.txt
 ```
