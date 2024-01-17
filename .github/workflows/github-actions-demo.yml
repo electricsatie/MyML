@@ -37,7 +37,8 @@ jobs:
       - name: create file
         run : |
           cat date.txt
-          date > date.txt
+          date > date1.txt
+          date > date2.txt
           cat date.txt
 
       - name: Auto commit
@@ -45,3 +46,4 @@ jobs:
         with:
           commit_message: "auto commit by github actions"
           branch: ${{ github.base_ref }}
+          file_pattern: 'date1.txt'
