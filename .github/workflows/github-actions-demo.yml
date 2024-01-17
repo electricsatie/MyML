@@ -42,3 +42,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "auto commit by github actions"
+          branch: ${{ github.base_ref }}
