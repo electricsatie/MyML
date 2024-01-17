@@ -36,7 +36,9 @@ jobs:
         
       - name: create file
         run : |
+          cat date.txt
           date > date.txt
+          cat date.txt
 
       - name: Auto commit
         uses: stefanzweifel/git-auto-commit-action@v5
