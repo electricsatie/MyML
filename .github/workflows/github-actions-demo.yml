@@ -50,4 +50,4 @@ jobs:
         with:
           commit_message: "auto commit by github actions"
           branch: ${{ github.base_ref }}
-          file_pattern: 'date3.txt'
+          file_pattern: 'working/date3.txt'
