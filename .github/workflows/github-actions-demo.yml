@@ -16,6 +16,16 @@ jobs:
         working-directory: working
 
     steps:
+      - name: Checkout github.head_ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+      
+      - name: git log github.ref
+        run: |
+          COMMIT_LOG=`git --no-pager log --format=format:'%s%n%n%b' -n 1`
+          echo -e "$COMMIT_LOG"
+
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -26,16 +36,6 @@ jobs:
           echo 'github.ref_name=' ${{ github.ref_name }}
           echo 'github.head_ref=' ${{ github.head_ref }}
           echo 'github.base_ref=' ${{ github.base_ref }}
-
-      - name: Checkout github.head_ref
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.base_ref }}
-      
-      - name: git log github.ref
-        run: |
-          COMMIT_LOG=`git --no-pager log --format=format:'%s%n%n%b' -n 1`
-          echo -e "$COMMIT_LOG"
         
       - name: create file
         run : |
